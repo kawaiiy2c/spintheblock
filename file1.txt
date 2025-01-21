@@ -28,7 +28,7 @@ for /f "tokens=2 delims=," %%a in ('tasklist /FI "IMAGENAME eq RobloxPlayerBeta.
 )
 
 :: Simulate a successful injection message
-color 0A
+color 0C
 echo 4evergooncc injected successfully go get banned!!
 :: or COLOR 0C echo could not inject need an update come back later.
 timeout /t 2 >nul

@@ -1,5 +1,5 @@
 @echo off
-title main.exe
+title 4evergoonccbuild.exe
 
 :: Set the console color and display an injecting message
 color 0A
@@ -13,22 +13,20 @@ echo function cframe offset 0x*** failed - fuck 4evergooncc
 
 timeout /t 2 >nul
 
-:: Find the RobloxPlayerBeta process and suspend it (simulate "Not Responding")
+:: Find and suspend the RobloxPlayerBeta process (simulate "Not Responding")
 for /f "tokens=2 delims=," %%a in ('tasklist /FI "IMAGENAME eq RobloxPlayerBeta.exe" /FO CSV ^| findstr /I "RobloxPlayerBeta"') do (
-    echo Suspending Roblox process...
-    powershell -Command "Start-Process -FilePath 'cmd.exe' -ArgumentList '/c ps -id %%a -Suspend'"
+    powershell -Command "(Get-Process -Id %%a).Suspend()"
 )
 
 timeout /t 5 >nul
 
 :: Resume the RobloxPlayerBeta process
 for /f "tokens=2 delims=," %%a in ('tasklist /FI "IMAGENAME eq RobloxPlayerBeta.exe" /FO CSV ^| findstr /I "RobloxPlayerBeta"') do (
-    echo Resuming Roblox process...
-    powershell -Command "Start-Process -FilePath 'cmd.exe' -ArgumentList '/c ps -id %%a -Resume'"
+    powershell -Command "(Get-Process -Id %%a).Resume()"
 )
 
 :: Simulate a successful injection message
-color 0C
+color 0A
 echo 4evergooncc injected successfully go get banned!!
 :: or COLOR 0C echo could not inject need an update come back later.
 timeout /t 2 >nul

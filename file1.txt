@@ -8,8 +8,8 @@ echo 4evergooncc injecting dork
 timeout /t 2 >nul
 
 :: Simulate an error
-color 0E
-echo function cframe offset 0x*** failed - fuck 4evergooncc
+color 0A
+echo function cframe offset 0x*** succeeded - fuck 4evergooncc
 
 timeout /t 2 >nul
 

@@ -1,4 +1,5 @@
 @echo off
+title main.exe
 
 :: Set the console color and display an injecting message
 color 0A
